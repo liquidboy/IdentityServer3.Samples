@@ -80,14 +80,14 @@ namespace WpfClient
                 clientId: "implicitclient",
                 responseType: responseType,
                 scope: scope,
-                redirectUri: "oob://localhost/wpfclient",
+                redirectUri: "oob://lobbyidp.azurewebsites.net/wpfclient",
                 state: "random_state",
                 nonce: "random_nonce" /**,
                 loginHint: "alice",
                 acrValues: "idp:Google b c" **/);
 
             _login.Show();
-            _login.Start(new Uri(startUrl), new Uri("oob://localhost/wpfclient"));
+            _login.Start(new Uri(startUrl), new Uri("oob://lobbyidp.azurewebsites.net/wpfclient"));
         }
 
         private async void CallUserInfo_Click(object sender, RoutedEventArgs e)

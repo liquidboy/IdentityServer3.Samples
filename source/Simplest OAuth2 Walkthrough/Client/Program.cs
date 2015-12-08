@@ -26,9 +26,9 @@ namespace Client
         static TokenResponse GetClientToken()
         {
             var client = new TokenClient(
-                "https://localhost:44333/connect/token",
-                "silicon",
-                "F621F470-9731-4A25-80EF-67A6F7C5F4B8");
+                "https://lobbyidp.azurewebsites.net/core/token",
+                "client",
+                "secret");
 
             return client.RequestClientCredentialsAsync("api1").Result;
         }
@@ -36,9 +36,9 @@ namespace Client
         static TokenResponse GetUserToken()
         {
             var client = new TokenClient(
-                "https://localhost:44333/connect/token",
-                "carbon",
-                "21B5F798-BE55-42BC-8AA8-0025B903DC3B");
+                "https://lobbyidp.azurewebsites.net/core/token",
+                "roclient",
+                "secret");
 
             return client.RequestResourceOwnerPasswordAsync("bob", "secret", "api1").Result;
         }

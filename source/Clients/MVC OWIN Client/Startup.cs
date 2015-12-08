@@ -27,7 +27,7 @@ namespace MVC_OWIN_Client
             {
                 ClientId = "implicitclient",
                 Authority = Constants.BaseAddress,
-                RedirectUri = "https://localhost:44301/",
+                RedirectUri = "https://localhost:44301/", //localhost
                 ResponseType = "id_token token",
                 Scope = "openid email write",
 
