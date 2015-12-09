@@ -21,10 +21,16 @@ namespace WpfClient
             {
                 var token = value;
                 var parts = token.Split('.');
-                var part = Encoding.UTF8.GetString(Base64Url.Decode(parts[1]));
 
-                var jwt = JObject.Parse(part);
-                Text.Text = jwt.ToString();
+                if(parts.Length > 1) { 
+                    var part = Encoding.UTF8.GetString(Base64Url.Decode(parts[1]));
+
+                    var jwt = JObject.Parse(part);
+                    Text.Text = jwt.ToString();
+                    return;
+                }
+
+                Text.Text = value;
             }
         }
     }
